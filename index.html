@@ -237,7 +237,7 @@
     </div>
 
     <div class="input-group">
-        <label>Final Pensionable Earnings (£) / best years pay in last 3 years</label>
+        <label id="pcpsEarningsLabel">Final Pensionable Earnings (£) / best years pay in last 3 years</label>
         <input type="text" id="pcpsEarnings" placeholder="e.g. 40000 or expression (2400*1)+(2600*2)">
     </div>
 
@@ -520,13 +520,26 @@
     }
 
     const evaluateInput = (id) => {
+        const el = document.getElementById(id);
         try {
-            const el = document.getElementById(id);
             if (!el || !el.value) return 0;
             let val = el.value.replace(/£/, '').replace(/,/g, '');
             return val ? parseFloat(eval(val)) || 0 : 0;
         } catch (e) {
-            alert("Invalid expression. Please enter a valid number or mathematical expression.");
+            let labelText = '';
+            if (el) {
+                const parent = el.closest('.input-group') || el.parentElement;
+                const label = parent ? parent.querySelector('label') : null;
+                if (label) {
+                    labelText = label.textContent.trim().replace(/:$/, '');
+                }
+            }
+            const fieldName = labelText ? `"${labelText}"` : 'input field';
+            alert(`Invalid expression in ${fieldName}.\n\nPlease enter a valid number or mathematical expression.`);
+            if (el) {
+                el.focus();
+                el.select();
+            }
             return 0;
         }
     };
@@ -628,9 +641,19 @@
     }
 
     function togglePlusInputs() {
-        const isPlus = document.getElementById('pcpsScheme').value === 'classic_plus';
+        const scheme = document.getElementById('pcpsScheme').value;
+        const isPlus = scheme === 'classic_plus';
         document.getElementById('pcpsStandardService').className = isPlus ? 'hidden' : '';
         document.getElementById('pcpsPlusService').className = isPlus ? '' : 'hidden';
+
+        const label = document.getElementById('pcpsEarningsLabel');
+        if (label) {
+            if (scheme === 'premium') {
+                label.textContent = "Best of, the last 12 months, best year in last four scheme years, highest average of three years in last 13 years.";
+            } else {
+                label.textContent = "Final Pensionable Earnings (£) / best years pay in last 3 years";
+            }
+        }
     }
 
     function calculatePCPS() {
