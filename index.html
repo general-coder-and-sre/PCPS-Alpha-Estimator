@@ -523,7 +523,7 @@
         const el = document.getElementById(id);
         try {
             if (!el || !el.value) return 0;
-            let val = el.value.replace(/£/, '').replace(/,/g, '');
+            let val = el.value.replace(/£/, '').replace(/,/g, '').replace(/[xX×]/g, '*');
             return val ? parseFloat(eval(val)) || 0 : 0;
         } catch (e) {
             let labelText = '';
