@@ -6,6 +6,9 @@ An interactive, client-side web application designed to help UK Civil Service em
 Since this project is built entirely using standard HTML5, CSS3, and JavaScript, there are no backend servers, database configurations, or build steps required.
 
 To run the estimator:
+The project is hosted on github pages https://general-coder-and-sre.github.io/PCPS-Alpha-Estimator/
+
+or
 1. Clone or download this repository.
 2. Open `combi/index.html` in any modern web browser.
 
