@@ -10,7 +10,7 @@ The project is hosted on github pages https://general-coder-and-sre.github.io/PC
 
 or
 1. Clone or download this repository.
-2. Open `combi/index.html` in any modern web browser.
+2. Open `index.html` in any modern web browser.
 
 ---
 
