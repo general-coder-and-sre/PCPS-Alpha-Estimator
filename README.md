@@ -45,19 +45,6 @@ To run the estimator:
 ### 6. Privacy & Offline-First Design
 *   **No Server Transmissions**: All calculations are executed locally in your web browser. No data ever leaves your device.
 *   **Auto-Save Progress**: Uses `localStorage` to save your inputs so you can refresh or revisit the page later without re-entering your numbers.
-
----
-
-## 📂 Project Structure
-
-*   📁 **`combi/`**
-    *   `index.html`: The main, production-ready combined PCPS & Alpha Pension Estimator.
-*   📁 **`PCPS/`**
-    *   `index.html`: Focused legacy PCPS scheme calculator.
-*   `alpha.html`, `alpha2.html`, etc.: Specific standalone iterations for the Alpha scheme.
-*   📁 **`combiOld/`**
-    *   Archive containing previous developer iterations and testing layouts.
-
 ---
 
 ## 🛠️ Technology Stack
