@@ -1,6 +1,6 @@
 # Civil Service Pension Estimator
 
-An interactive, client-side web application designed to help UK Civil Service employees estimate and visualize their pension benefits. It supports the legacy **PCPS** (Classic, Premium, Classic Plus) schemes, the modern **Alpha** scheme, and calculates **Combined Total Benefits** if you have service across both schemes.
+An interactive, client-side web application designed to help UK Civil Service employees estimate and visualize their pension benefits. It supports the legacy **PCPS** (Classic, Premium, Classic Plus) schemes, the modern **Alpha** scheme, and calculates **Combined Total Benefits** if you have service across both schemes. This estimator has been updated with post 01/11/26 early retirement factors.
 
 ## 🚀 Live Demo / Getting Started
 Since this project is built entirely using standard HTML5, CSS3, and JavaScript, there are no backend servers, database configurations, or build steps required.
